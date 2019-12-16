@@ -1,38 +1,88 @@
-.App {
-  text-align: center;
+.bg {
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: url("./bg.gif") repeat;
+  width: 100vw;
+  height: 100vh;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.burger {
+  position: absolute;
+  right: 30px;
+  top: 20px;
+  cursor: pointer;
+  z-index: 1;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.bar1,
+.bar2,
+.bar3 {
+  background-color: rgb(196, 196, 196);
+  width: 28px;
+  height: 5px;
+  margin: 5px 0;
+  transition: 0.3s linear;
+  transform-origin: right center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.open .bar1 {
+  background-color: black;
+  transform: rotate(-45deg);
 }
 
-.App-link {
-  color: #61dafb;
+.open .bar2 {
+  opacity: 0;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.open .bar3 {
+  background-color: black;
+  transform: rotate(45deg);
+}
+
+.nav {
+  transition: 1s;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.nav.open {
+  background-color: rgb(255, 236, 199);
+  opacity: 0.5;
+}
+
+.bg {
+  transition: 1s;
+}
+
+.bg.open {
+  filter: blur(8px);
+}
+
+ul {
+  display: none;
+  position: absolute;
+  top: 100px;
+  right: 250px;
+}
+
+li {
+  font-size: 30px;
+  color: rgb(58, 52, 47);
+  font-weight: bolder;
+  font-family: "Raleway", sans-serif;
+  cursor: pointer;
+  text-decoration: none;
+  list-style-type: none;
+  margin: 50px 0;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+li.open {
+  transform: translateY(-15px);
+  opacity: 1;
 }
