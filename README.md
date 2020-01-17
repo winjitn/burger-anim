@@ -1,5 +1,5 @@
 Check out my [Portfolio](https://winjitn.github.io/portfolio).
 
-## Rurger Animation
+## Burger Animation
 
 ![](img/burger.gif)
